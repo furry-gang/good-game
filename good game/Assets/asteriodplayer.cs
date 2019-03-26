@@ -9,6 +9,10 @@ public class asteriodplayer : MonoBehaviour
 
     private float torgueInput;
     private float throttleInput;
+    public GameObject shotObject;
+    public Transform spawn1;
+    public Transform spawn2;
+    private float counter = 0;
     void Start()
     {
       rb = GetComponent<Rigidbody>();
@@ -37,6 +41,20 @@ public class asteriodplayer : MonoBehaviour
         }
         var worldCoordinates = Camera.main.ScreenToWorldPoint(newPosition);
         this.transform.position = new Vector3(worldCoordinates.x, 0, worldCoordinates.z);
+        
+        if(counter <= 0) {
+            if(Input.GetButton("Fire1")) {
+                GameObject newObject = Instantiate(shotObject, spawn1.transform.position, spawn1.transform.rotation);
+                newObject.transform.Rotate(90, 0, 0);
+                newObject.SetActive(true);
+                GameObject newObject2 = Instantiate(shotObject, spawn2.transform.position, spawn2.transform.rotation);
+                newObject2.transform.Rotate(90, 0, 0);
+                newObject2.SetActive(true);
+                counter = 0.5f;
+            }
+        } else {
+            counter -= Time.deltaTime;
+        }
     }
      void FixedUpdate() {
         rb.AddRelativeForce(Vector3.forward * throttleInput * ThrottlePower, ForceMode.Force);
