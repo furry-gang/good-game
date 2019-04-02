@@ -57,8 +57,9 @@ public class asteriodplayer : MonoBehaviour
         }
     }
      void FixedUpdate() {
-        rb.AddRelativeForce(Vector3.forward * throttleInput * ThrottlePower, ForceMode.Force);
-        rb.AddTorque(Vector3.up * torgueInput * TorguePower, ForceMode.Force);
-        
+        //rb.AddRelativeForce(Vector3.forward * 1, ForceMode.Force);
+        transform.Translate(Vector3.forward * 0.2f);
+        //rb.AddTorque(Vector3.up * torgueInput * TorguePower, ForceMode.Force);
+        transform.Rotate(Input.GetAxisRaw("Vertical"), 0, -Input.GetAxisRaw("Horizontal"));
      }
 }
