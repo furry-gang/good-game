@@ -1,4 +1,5 @@
 ﻿
+using System.Collections;
 using UnityEngine;
 
 public class asteroid : MonoBehaviour
@@ -9,11 +10,16 @@ public class asteroid : MonoBehaviour
 
     private Vector3 rotationAxis;
     private Vector3 driftingDirection; 
+    private MeshRenderer meshRanderer;
+    private SphereCollider SphereCollider;
 
     void Start()
         {     
         rotationAxis = new Vector3(Random.Range(0, 100), Random.Range(0, 100), Random.Range(0, 100)).normalized;
         driftingDirection =  new Vector3(Random.Range(0, 100), Random.Range(0, 100), Random.Range(0, 100)).normalized;
+
+            meshRanderer = GetComponentInChildren<MeshRenderer>();
+            SphereCollider = GetComponentInChildren<SphereCollider>();
         }
 
     // Update is called once per frame
@@ -26,11 +32,27 @@ public class asteroid : MonoBehaviour
      }
      void OnTriggerEnter(Collider other)
      {
+         Debug.Log(other.tag);
          if(other.tag == "Player Laser")
          {
-             ExplosionAudioSource.Play();
-             Destroy(gameObject);
-             Destroy(other.gameObject);
+             StartCoroutine(PlayAudioAndDestory(other));
+
+             
          }
      }
+     private IEnumerator PlayAudioAndDestory(Collider other)
+     {
+         meshRanderer.enabled = false;
+         SphereCollider.enabled = false;
+            ExplosionAudioSource.Play();
+            yield return new WaitForSeconds(ExplosionAudioSource.clip.length);
+             Destroy(gameObject);
+             if (other != null)
+             {
+                  Destroy(other.gameObject);
+             }
+
+            
+     }
+     
 }
