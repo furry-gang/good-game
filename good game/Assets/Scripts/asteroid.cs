@@ -32,7 +32,7 @@ public class asteroid : MonoBehaviour
      }
      void OnTriggerEnter(Collider other)
      {
-         Debug.Log(other.tag);
+         //Debug.Log(other.tag);
          if(other.tag == "Player Laser")
          {
              StartCoroutine(PlayAudioAndDestory(other));
