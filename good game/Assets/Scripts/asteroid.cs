@@ -35,17 +35,15 @@ public class asteroid : MonoBehaviour
          //Debug.Log(other.tag);
          if(other.tag == "Player Laser")
          {
-             StartCoroutine(PlayAudioAndDestory(other));
+             PlayAudioAndDestory(other);
 
              
          }
      }
-     private IEnumerator PlayAudioAndDestory(Collider other)
+     private void PlayAudioAndDestory(Collider other)
      {
          meshRanderer.enabled = false;
          SphereCollider.enabled = false;
-            ExplosionAudioSource.Play();
-            yield return new WaitForSeconds(ExplosionAudioSource.clip.length);
              Destroy(gameObject);
              if (other != null)
              {

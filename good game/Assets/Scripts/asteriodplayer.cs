@@ -45,11 +45,13 @@ public class asteriodplayer : MonoBehaviour
         if(counter <= 0) {
             if(Input.GetButton("Fire1")) {
                 GameObject newObject = Instantiate(shotObject, spawn1.transform.position, spawn1.transform.rotation);
+                newObject.transform.rotation = transform.rotation;
                 newObject.transform.Rotate(90, 0, 0);
                 newObject.SetActive(true);
                 GameObject newObject2 = Instantiate(shotObject, spawn2.transform.position, spawn2.transform.rotation);
-                newObject2.transform.Rotate(90, 0, 0);
                 newObject2.SetActive(true);
+                newObject2.transform.rotation = transform.rotation;
+                newObject2.transform.Rotate(90, 0, 0);
                 counter = 0.5f;
             }
         } else {
