@@ -41,6 +41,7 @@ public class Enemymotorfire : MonoBehaviour
         Debug.Log("Fire!!!");
         GameObject las = Instantiate(LaserPrefab, transform.position, Quaternion.LookRotation(direction));
         las.SetActive(true);
+        las.transform.rotation = Quaternion.LookRotation(new Vector3(0f, 90f, 0f));
     }
 }
 
