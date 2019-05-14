@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 1810223758}
   - component: {fileID: 1810223759}
   m_Layer: 0
-  m_Name: ufo
+  m_Name: tomte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,4 +184,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeBetweenShotsInSeconds: 1
   AngleOffset: 0
-  LaserPrefab: {fileID: 0}
+  LaserPrefab: {fileID: 6986037470562603368, guid: 31b41843413340649bc151ef8dbb8040,
+    type: 3}

@@ -106,7 +106,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeBetweenShotsInSeconds: 1
   AngleOffset: 0
-  LaserPrefab: {fileID: 0}
+  LaserPrefab: {fileID: 6986037470562603368, guid: 31b41843413340649bc151ef8dbb8040,
+    type: 3}
 --- !u!1 &306362632710011265
 GameObject:
   m_ObjectHideFlags: 0
