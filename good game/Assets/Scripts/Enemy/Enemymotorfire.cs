@@ -38,11 +38,11 @@ public class Enemymotorfire : MonoBehaviour
 
     private void Fire(Vector3 direction)
     {
-        Debug.Log("Fire!!!");
-        Debug.Log(gameObject);
-        GameObject las = Instantiate(LaserPrefab, transform.position, Quaternion.LookRotation(direction));
+        //Debug.Log("Fire!!!");
+        GameObject las = Instantiate(LaserPrefab, transform.position, Quaternion.Euler(new Vector3(0,0,0)));
         las.SetActive(true);
-        las.transform.rotation = Quaternion.LookRotation(new Vector3(0f, 90f, 0f));
+        las.transform.LookAt(new Vector3(0, 90, 0));//Quaternion.LookRotation(direction);
+//        las.transform.rotation = Transform.LookAt(player.transform);//Quaternion.LookRotation(direction);
     }
 }
 

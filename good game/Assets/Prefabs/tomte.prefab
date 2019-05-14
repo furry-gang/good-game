@@ -184,5 +184,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeBetweenShotsInSeconds: 1
   AngleOffset: 0
-  LaserPrefab: {fileID: 6986037470562603368, guid: 31b41843413340649bc151ef8dbb8040,
+  LaserPrefab: {fileID: 8141323510357228358, guid: 2c49a86cc1c8a114b8e7b34e2631a0f5,
     type: 3}
