@@ -7,6 +7,7 @@ public class Enemymotor : MonoBehaviour
 
     public float Speed;
     public float AngualarSpeeed;
+    public AudioClip ExplosionAudioClip;
     
     private Vector3 direction; 
 
@@ -22,4 +23,17 @@ public class Enemymotor : MonoBehaviour
        transform.Rotate(Vector3.up, AngualarSpeeed * Time.deltaTime); 
        transform.Translate(direction * Speed * Time.deltaTime, Space.World);
     }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "laser")
+        {
+            Destroy(other.gameObject);
+            //CreateAudioHelper.CreateAudioGameObject(ExplosionAudioClip, "EnemyDestroySound", transform.position);
+
+            Destroy(this.gameObject);
+        }
+    }
+
 }
