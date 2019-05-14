@@ -13,7 +13,7 @@
      {
          if(timer <= 0)
          {
-             position = new Vector3(Random.Range(0.0F, 10.0F), 0, Random.Range(0.0F, 10.0F));
+             position = transform.position + new Vector3(Random.Range(-50.0F, 50.0F), 0, Random.Range(-50.0F, 50.0F));
              Instantiate(coinDrop, position, Quaternion.identity);
              timer = freq;
          } else {
