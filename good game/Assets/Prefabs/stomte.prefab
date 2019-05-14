@@ -8,20 +8,19 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1488308149}
   - component: {fileID: 1488308146}
   - component: {fileID: 1488308145}
+  - component: {fileID: 1488308144}
   - component: {fileID: 1488308148}
   - component: {fileID: 1488308147}
-  - component: {fileID: 7737175837625536919}
   m_Layer: 0
-  m_Name: asteroid
+  m_Name: Asteroid_01_S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1488308149
+--- !u!4 &1488308146
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -35,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1488308146
+--- !u!33 &1488308145
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,7 +42,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488308143}
   m_Mesh: {fileID: 4300000, guid: 72fd38d3d1566e74b8726177e8de153f, type: 3}
---- !u!23 &1488308145
+--- !u!23 &1488308144
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,19 +107,3 @@ MonoBehaviour:
   RotatioSpeed: 10
   DriftingSpeed: 2
   ExplosionAudioSource: {fileID: 0}
---- !u!114 &7737175837625536919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1488308143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1018caa4ab3cea409247f2d5eec0e6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinDrop: {fileID: 1488308143}
-  timer: 0.1
-  freq: 0.1
-  position: {x: 0, y: 0, z: 0}
